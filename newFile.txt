@@ -1,0 +1,7 @@
+Hello World!
+This is the Littlelemon Capstone project of Meta Back-end developer program.
+Tchnologies:
+Html,CSS, Javascript
+Django rest framework
+Djoser
+
