@@ -1,7 +1,8 @@
 Hello World!
-This is the Littlelemon Capstone project of Meta Back-end developer program.
-Tchnologies:
-Html,CSS, Javascript
+This is the Littlelemon Restaurant Capstone project of the Meta Back-end developer program.
+Technologies:
+Html, CSS, Javascript
 Django rest framework
 Djoser
+Insomnia API Testing tool
 
