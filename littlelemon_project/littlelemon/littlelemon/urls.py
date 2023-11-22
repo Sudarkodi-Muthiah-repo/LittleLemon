@@ -28,5 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/',include('restaurant.urls')), #MSK added code here
     path('restaurant/booking/', include(router.urls)),#MSK added code here
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
 
 ]

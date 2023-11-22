@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,permission_classes
 from rest_framework import generics
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, DestroyAPIView
 from rest_framework.response import Response
 from .models import Booking,MenuItem,Menu
 from .serializers import BookingSerializer,menuSerializer,MenuItemSerializer,UserSerializer
 from rest_framework import viewsets,permissions
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 from django.contrib.auth.models import User
 
@@ -28,12 +29,18 @@ def index(request):
 #         if serializer.is_valid():
 #             serializer.save()
 #             return Response({"status":"success","data":serializer.data})
-    
+@api_view()
+@permission_classes([IsAuthenticated])
+def securedview(request):
+    return Response({"message": "needs authentication"})
+
 class MenuItemsView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
 
