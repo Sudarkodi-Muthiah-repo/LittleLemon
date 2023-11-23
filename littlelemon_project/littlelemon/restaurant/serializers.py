@@ -8,10 +8,6 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['url','username','email','groups']
 
-# class menuSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Menu
-#         fields = '__all__'
 class MenuItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuItem
