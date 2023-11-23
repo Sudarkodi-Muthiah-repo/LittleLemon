@@ -4,8 +4,8 @@ from rest_framework.decorators import api_view,permission_classes
 from rest_framework import generics
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, DestroyAPIView
 from rest_framework.response import Response
-from .models import Booking,MenuItem,Menu
-from .serializers import BookingSerializer,menuSerializer,MenuItemSerializer,UserSerializer
+from .models import Booking,MenuItem
+from .serializers import BookingSerializer,MenuItemSerializer,UserSerializer
 from rest_framework import viewsets,permissions
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
